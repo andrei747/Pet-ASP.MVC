@@ -1,0 +1,55 @@
+﻿@model PetViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<html>
+
+<body style="background-color:black">
+    <form asp-controller="Pet" asp-action="AddPet" method="get">
+        <a asp-action="GetPetById" asp-controller="Pet" asp-route-id="1">Get dog</a>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Id)
+            @Html.EditorFor(expression: Model => Model.Id)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Name)
+            @Html.EditorFor(expression: Model => Model.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Race)
+            @Html.EditorFor(expression: Model => Model.Race)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Age)
+            @Html.EditorFor(expression: Model => Model.Age)
+        </div>
+        <input type="submit" />
+        <a asp-action="GetPetById" asp-controller="Pet" asp-route-id="2">Get cat</a>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Id)
+            @Html.EditorFor(expression: Model => Model.Id)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Name)
+            @Html.EditorFor(expression: Model => Model.Name)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Race)
+            @Html.EditorFor(expression: Model => Model.Race)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: Model => Model.Age)
+            @Html.EditorFor(expression: Model => Model.Age)
+        </div>
+        <input type="submit" />
+        <div style="color:wheat">
+            <h1>Index</h1>
+
+        </div>
+
+        <a asp-action="GetPetById">Go to id pets</a>
+
+    </form>
+</body>
+
+</html>

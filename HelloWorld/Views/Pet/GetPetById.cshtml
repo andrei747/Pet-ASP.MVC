@@ -1,0 +1,29 @@
+﻿@model PetViewModel
+@{
+    ViewData["Title"] = "GetPetById";
+}
+
+<h1>GetPetById</h1>
+
+<form asp-controller="Pet" asp-action="GetPetById" method="post">
+    <div class="form-group">
+        @Html.LabelFor(expression: Model => Model.Id)
+        @Html.EditorFor(expression: Model => Model.Id)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: Model => Model.Name)
+        @Html.EditorFor(expression: Model => Model.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: Model => Model.Race)
+        @Html.EditorFor(expression: Model => Model.Race)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: Model => Model.Age)        
+        @Html.EditorFor(expression: Model => Model.Age)
+    </div>
+    <input type="submit" />
+    <a asp-action="AddPet">go to add pets</a>
+    <a asp-action="Index">go to index</a>
+</form>
+

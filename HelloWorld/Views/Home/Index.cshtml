@@ -1,0 +1,46 @@
+﻿@model StudentViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<form asp-controller="Home" asp-action="CreateStudent" method="post">
+<!--Input and sumbit elements-->
+    @*<div class="form-group">
+            @Html.LabelFor(expression: model => model.FirstName)
+            @Html.TextBoxFor(expression: model => model.FirstName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(expression: model => model.LastName)
+            @Html.TextBoxFor(expression: model => model.LastName)
+        </div>*@
+    <div class="form-group">
+        <a asp-area="" asp-controller="Home" asp-action="GetStudentById", asp-route-id="1">Get first student</a>
+        <a asp-area="" asp-controller="Home" asp-action="GetStudentById", asp-route-id="2">Get second student</a>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.id)
+        @Html.EditorFor(expression: model => model.id)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.FirstName)
+        @Html.ValidationMessageFor(expression:model => model.FirstName)
+        @Html.EditorFor(expression: model => model.FirstName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.LastName)
+        @Html.EditorFor(expression: model => model.LastName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.IsnewlyEnrolled)
+        @Html.EditorFor(expression: model => model.IsnewlyEnrolled)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(expression: model => model.DateOfBirth)
+        @Html.EditorFor(expression: model => model.DateOfBirth)
+    </div>
+    <input type="submit" />
+</form>
